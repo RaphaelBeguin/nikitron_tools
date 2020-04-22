@@ -8,7 +8,7 @@ bl_info = {
     "warning": "",
     "wiki_url": "",
     "tracker_url": "",
-    "category": "Misc"}
+    "category": "Create"}
 
 import os
 import signal
@@ -67,7 +67,7 @@ class OP_radiola(bpy.types.Operator):
 class OP_radiola_panel(bpy.types.Panel):
     bl_space_type = "VIEW_3D"
     bl_region_type = "UI"
-    bl_category = "Create"
+    bl_category = "Misc"
     bl_context = "objectmode"
     bl_label = "Radiola"
     bl_options = {'DEFAULT_CLOSED'}
@@ -106,51 +106,41 @@ class RP_Playlist(bpy.types.PropertyGroup):
     url : bpy.props.StringProperty()
     name : bpy.props.StringProperty()
 
-urls = [    'http://icecast.vgtrk.cdnvideo.ru/vestifm_mp3_192kbps',
-            'http://strm112.1.fm/atr_mobile_mp3',
-            'http://ic2.101.ru:8000/v4_1',
-            'http://online.radiorecord.ru:8101/rr_320',
-            'http://air.radiorecord.ru:8102/sd90_320',
-            'http://46.105.180.202:8040/sr_128',
-            'http://strm112.1.fm/chilloutlounge_mobile_mp3',
-            'http://185.53.169.128:8000/192',
-            'http://sumerki.su:8000/Sumerki',
-            'http://myradio.ua:8000/loungefm128.mp3',
-            'http://icecast.piktv.cdnvideo.ru/vanya',  #:8108/shanson128.mp3
-            'http://icecast.rmg.cdnvideo.ru/rr.mp3',  #:8000/russianradio128.mp3
-            'http://81.30.54.74:8000/radio4',
-            'http://ic2.101.ru:8000/v5_1',
-            'http://radio.globaltranceinvasion.com:8000/radiohi',
-            'http://icecast.vgtrk.cdnvideo.ru/mayakfm_mp3_192kbps',
-            'http://nashe1.hostingradio.ru/nashe-128.mp3',
-            'http://icecast.radiodfm.cdnvideo.ru/dfm.mp3',
-            'http://ic2.101.ru:8000/v1_1',
-            'http://listen1.myradio24.com:9000/4455',
-            'http://174.36.206.197:8000/;stream.nsv',
-            'http://choco.hostingradio.ru:10010/fm', #http://pianosolo.streamguys.net:80/live
-            'http://sc1c-sjc.1.fm:7070/?type=.flv',
-            'http://source.dnbradio.com:10128/128k.mp3',
-            'http://sc3b-sjc.1.fm:7802/?type=.flv',
-            'http://quarrel.str3am.com:7990/;stream.nsv&type=mp3',
-            'http://s7.radioheart.ru:8003/live',
-            'http://stream.dubstep.fm/stream/1/',
-            'http://176.104.22.115:8000/192.mp3',
+urls = [    'http://radio.6forty.com:8000/6forty',
+            'http://postrocks.me:8000/',
+            'http://79.111.14.76:8002/postrock',
+			'http://79.120.39.202:8002/aabmds',
+			'http://79.120.39.202:8002/darkambient',
+			'http://79.120.39.202:8002/postmetal'
+            'http://radios.rtbf.be/wr-c21-60-128.mp3',
+            'http://radios.rtbf.be/wr-c21-70-128.mp3',
+            'http://xstream1.somafm.com:8090',
+            'http://streaming.koop.org:8534/',
+            'http://ice.somafm.com/missioncontrol',
+			'http://ice6.somafm.com/sonicuniverse-256-mp3',
+			'http://ice2.somafm.com/spacestation-128-mp3',
+			'http://ice.somafm.com/deepspaceone',
+			'http://ice.somafm.com/dronezone',
+			'http://s3.viastreaming.net:8835/',
+			'http://37.251.146.169:8300/stream',
+			
     ]
-names = [   'Вести',       'Амстердам транс',
-            'Романтика',   'Рекорд электроника', 
-            '90-е гг',     'Электроскай', 
-            '1фм лаунж',   'Атмосфера ланж', 
-            'Сумерьки',    'ЛанжФМ', 
-            'Ваня',        'Русское Радио', 
-            'Дача',        'Юмор фм', 
-            'Транс',       'Маяк', 
-            'Наше радио',  'Электроника', 
-            'Энергия',     'Хип Хоп', 
-            'Классика',    'Шакалад', 
-            'Классика',    'ДНБ', 
-            'Кантри',      'Жаз', 
-            '80-е гг',     'Дабстеп', 
-            'Прогрессивное','custom link...',
+names = [   'PostRock',     '66forty',
+            'PostRock',     'postrock.me',
+            'RadioCaprice', 'PostRock',
+			'RadioCaprice', 'Ambient Black Metal',
+			'RadioCaprice', 'Darkambient',
+			'RadioCaprice', 'Postmetal',
+            'rtbf',         '60"s',
+            'rtbf',         '70"s',
+            'SomaFM',       'IndiePoP',
+            'SomaFM',       'Koop', 
+            'SomaFM',       'MissionControl',
+            'SomaFM',       'SonicUniverse', 
+            'SomaFM',       'Spacestation', 
+            'SomaFM',       'Dronezone',
+			'Darkambientradio', 'Darkambient',
+			'Radio Classic', 'Mozart',
     ]
 
 def dolist(urls,names):
